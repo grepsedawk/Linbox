@@ -2,7 +2,7 @@
 It's winbox for linux!
 
 ## Installation Guide
-Simply clone/download this repository and run `./install` as root.
+Simply clone or download this repository and run `./install` as root.
 
 ## Operating Systems:
 Currently known working operating systems:  
