@@ -142,8 +142,7 @@ function downloadWinbox() {
 }
 
 function installLinbox() {
-    echo "/usr/bin/wine /opt/winbox/winbox.exe" > /usr/local/bin/linbox 2>> install.log
-    chmod +x /usr/local/bin/linbox &>> install.log
+    cp bin/linbox /usr/local/bin/linbox
 }
 
 
