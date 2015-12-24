@@ -27,7 +27,7 @@ action() {
 	echo -n "$STRING "
 	shift
 	startSpinner
-	eval "$*" 2>> /tmp/powercodeInstall.log && echo_success || echo_failure
+	eval "$*" 2>> install.log && echo_success || echo_failure
 	stopSpinner
 	rc=$?
 	echo
@@ -101,13 +101,39 @@ function stopSpinner {
 #  Functions
 #
 #####
-function functionName() {
-    touch test
+function enableMultiarch() {
+    if $(getconf LONG_BIT) == 64; then
+        dpkg --add-architecture i386 &>> install.log
+    fi
 }
+
+function aptgetUpdate() {
+   apt-get update -y &>> install.log
+}
+
+function installWine() {
+    apt-get install -y wine &>> install.log
+}
+
+function downloadWinbox() {
+    mkdir /opt/winbox &>> install.log
+    wget -P /opt/winbox/ http://download2.mikrotik.com/routeros/winbox/3.0/winbox.exe &>> install.log
+}
+
+function installLinbox() {
+    echo "/usr/bin/wine /opt/winbox/winbox.exe" > /usr/local/bin/linbox 2>> install.log
+    chmod +x /usr/local/bin/linbox &>> install.log
+}
+
+
 
 #####
 #
 #  Actions
 #
 #####
-action "Running function functionName" functionName
+action "Enabling multiarch if 64 bit." enableMultiarch
+action "Running apt-get update" aptgetUpdate
+action "Installing wine" installWine
+action "Download Winbox" downloadWinbox
+action "Installing Linbox" installLinbox
