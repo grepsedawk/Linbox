@@ -156,5 +156,5 @@ action "Checking if root" checkIfRoot
 action "Enabling multiarch if 64 bit" enableMultiarch
 action "Running apt-get update" aptgetUpdate
 action "Installing wine" installWine
-action "Download Winbox" downloadWinbox
+action "Downloading Winbox" downloadWinbox
 action "Installing Linbox" installLinbox
