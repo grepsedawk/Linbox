@@ -139,7 +139,7 @@ function installWine() {
 
 function downloadWinbox() {
     mkdir /opt/winbox &>> linboxInstall.log
-    wget -P /opt/winbox/ http://download2.mikrotik.com/routeros/winbox/3.0/winbox.exe &>> linboxInstall.log
+    wget -O /opt/winbox/winbox.exe http://download2.mikrotik.com/routeros/winbox/3.0/winbox.exe &>> linboxInstall.log
 }
 
 function installLinbox() {
