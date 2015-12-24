@@ -5,6 +5,6 @@ It's winbox for linux!
 Simply clone or download this repository and run `./install` as root.
 
 ## Operating Systems:
-Currently known working operating systems:  
+Current known working operating systems:  
 - Debian Jessie
 - Ubuntu 15.10
