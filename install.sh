@@ -7,6 +7,14 @@
 #usage          :./install.sh
 #notes          :
 #============================================================================
+trap CleanUp INT
+
+function CleanUp
+{
+	stty sane
+	stopSpinner
+	exit $1
+}
 
 BOOTUP=color
 RES_COL=71
@@ -101,6 +109,19 @@ function stopSpinner {
 #  Functions
 #
 #####
+function checkIfRoot() {
+    if [ `whoami` != 'root' ]; then
+        echo_failure
+	echo
+	echo
+        echo "Linbox must be installed as the root user, please run the command as:"
+        echo "sudo $0 or change to the root user"
+        echo "Exiting install now."
+        echo
+        CleanUp 1
+    fi
+}
+
 function enableMultiarch() {
     if $(getconf LONG_BIT) == 64; then
         dpkg --add-architecture i386 &>> install.log
@@ -132,7 +153,8 @@ function installLinbox() {
 #  Actions
 #
 #####
-action "Enabling multiarch if 64 bit." enableMultiarch
+action "Checking if root" checkIfRoot
+action "Enabling multiarch if 64 bit" enableMultiarch
 action "Running apt-get update" aptgetUpdate
 action "Installing wine" installWine
 action "Download Winbox" downloadWinbox
