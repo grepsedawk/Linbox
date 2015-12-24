@@ -2,5 +2,5 @@
 It's winbox for linux!
 
 ## Installation
-Currently known operating systems:  
+Currently known working operating systems:  
 - Debian Jessie
