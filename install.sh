@@ -35,7 +35,7 @@ action() {
 	echo -n "$STRING "
 	shift
 	startSpinner
-	eval "$*" 2>> install.log && echo_success || echo_failure
+	eval "$*" 2>> linboxInstall.log && echo_success || echo_failure
 	stopSpinner
 	rc=$?
 	echo
@@ -124,22 +124,22 @@ function checkIfRoot() {
 
 function enableMultiarch() {
     if $(getconf LONG_BIT) == 64; then
-        dpkg --add-architecture i386 &>> install.log
+        dpkg --add-architecture i386 &>> linboxInstall.log
     fi
 }
 
 function aptgetUpdate() {
-   apt-get update -y &>> install.log
+   apt-get update -y &>> linboxInstall.log
 }
 
 function installWine() {
     echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
-    apt-get install -y wine &>> install.log
+    apt-get install -y wine &>> linboxInstall.log
 }
 
 function downloadWinbox() {
-    mkdir /opt/winbox &>> install.log
-    wget -P /opt/winbox/ http://download2.mikrotik.com/routeros/winbox/3.0/winbox.exe &>> install.log
+    mkdir /opt/winbox &>> linboxInstall.log
+    wget -P /opt/winbox/ http://download2.mikrotik.com/routeros/winbox/3.0/winbox.exe &>> linboxInstall.log
 }
 
 function installLinbox() {
