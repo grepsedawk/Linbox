@@ -139,7 +139,7 @@ function installWine() {
 
 function installLinbox() {
     mkdir /opt/linbox &>> linboxInstall.log
-    cp -f bin/winbox.exe /opt/linbox/winbox.exe &>> linboxInstall.log
+    cp bin/* /opt/linbox/ &>> linboxInstall.log
     cp bin/linbox /usr/local/bin/linbox
     cp bin/linbox.desktop /usr/local/share/applications
 }
