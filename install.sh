@@ -138,8 +138,8 @@ function installWine() {
 }
 
 function downloadWinbox() {
-    mkdir /opt/winbox &>> linboxInstall.log
-    cp -f bin/winbox.exe /opt/winbox/winbox.exe &>> linboxInstall.log
+    mkdir /opt/linbox &>> linboxInstall.log
+    cp -f bin/winbox.exe /opt/linbox/winbox.exe &>> linboxInstall.log
 }
 
 function installLinbox() {
