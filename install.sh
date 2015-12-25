@@ -3,7 +3,7 @@
 #description    :It's winbox for linux!
 #author         :Alex Piechowski
 #date           :20151223
-#version        :0.1
+#version        :0.2
 #usage          :./install.sh
 #notes          :
 #============================================================================
@@ -137,13 +137,11 @@ function installWine() {
     apt-get install -y wine &>> linboxInstall.log
 }
 
-function downloadWinbox() {
+function installLinbox() {
     mkdir /opt/linbox &>> linboxInstall.log
     cp -f bin/winbox.exe /opt/linbox/winbox.exe &>> linboxInstall.log
-}
-
-function installLinbox() {
     cp bin/linbox /usr/local/bin/linbox
+    cp bin/linbox.desktop /usr/local/share/applications
 }
 
 
@@ -157,5 +155,4 @@ action "Checking if root" checkIfRoot
 action "Enabling multiarch if 64 bit" enableMultiarch
 action "Running apt-get update" aptgetUpdate
 action "Installing wine" installWine
-action "Downloading Winbox" downloadWinbox
 action "Installing Linbox" installLinbox
