@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=Linbox
+Icon=/opt/winbox/logo.png
+Exec=/usr/local/bin/linbox
+Comment=Winbox for Linux!
+Categories=Networking;
+Terminal=false
