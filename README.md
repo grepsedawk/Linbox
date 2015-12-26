@@ -3,6 +3,7 @@ It's winbox for linux!
 
 ## Installation Guide
 Simply clone or download this repository and run `./install` as root.
+Currently supports Debian based distributions.
 
 ## Current known working operating systems:
 - Debian Jessie
