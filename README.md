@@ -12,7 +12,7 @@ Simply clone or download this repository and run `./install` as root.
 Desktop entry on Gnome 3:
 ![Desktop Entry Gnome 3](/img/DesktopEntryGnome3.png?raw=true "Desktop Entry Gnome 3")
 
-Winbox Login Screen:  
+Linbox Login Screen:  
 ![Linbox Login Screen](/img/LinboxLogin.png?raw=true "Linbox Login Screen")
 
 Inside Linbox:  
