@@ -14,3 +14,6 @@ Desktop entry on Gnome 3:
 
 Winbox Login Screen:  
 ![Winbox Login Screen](/img/WinboxLogin.png?raw=true "Winbox Login Screen")
+
+Inside Linbox:  
+![Inside Linbox](/img/InsideLinbox.png?raw=true "Inside Linbox")
